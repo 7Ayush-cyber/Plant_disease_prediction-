@@ -1,118 +1,3 @@
-# # import streamlit as st
-# # import tensorflow as tf
-# # import numpy as np
-# # from PIL import Image
-# # from predict import predict_plant_disease
-# # import os
-
-# # # Config
-# # IMG_SIZE = (224, 224)
-# # MODEL_PATH = 'C:/streamlit run app.pyUsers/ayush/Documents/Coding/Agriscan/plant_disease_mobilenetv2.h5'
-# # CLASS_NAMES = [
-# #     "Pepper__bell___Bacterial_spot",
-# #     "Pepper__bell___healthy",
-# #     "Potato___Early_blight",
-# #     "Potato___healthy",
-# #     "Potato___Late_blight",
-# #     "Tomato_Target_Spot",
-# #     "Tomato_Tomato_mosaic_virus",
-# #     "Tomato_Tomato_YellowLeaf__Curl_Virus",
-# #     "Tomato_Bacterial_spot",
-# #     "Tomato_Early_blight",
-# #     "Tomato_healthy",
-# #     "Tomato_Late_blight",
-# #     "Tomato_Leaf_Mold",
-# #     "Tomato_Septoria_leaf_spot",
-# #     "Tomato_Spider_mites_Two_spotted_spider_mite"
-# # ]
-
-# # @st.cache_resource
-# # def load_model():
-# #     return tf.keras.models.load_model(MODEL_PATH)
-
-# # model = load_model()
-
-# # # Title and UI
-# # st.title("Plant Disease Classifier")
-# # st.write("Upload a leaf image to detect the plant disease.")
-
-# # uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
-
-# # if uploaded_file:
-# #     image = Image.open(uploaded_file)
-# #     st.image(image, caption="Uploaded Image", use_column_width=True)
-
-# #     if st.button("Predict"):
-# #         # Save temp file and predict
-# #         image_path = "temp_image.jpg"
-# #         image.save(image_path)
-
-# #         prediction = predict_plant_disease(image_path, model, CLASS_NAMES)
-# #         st.success(f"Predicted Disease: **{prediction}**")
-
-
-# import streamlit as st
-# import tensorflow as tf
-# import numpy as np
-# from PIL import Image
-# from predict import predict_plant_disease
-# import os
-
-# # Config
-# IMG_SIZE = (224, 224)
-# CLASS_NAMES = [
-#     "Pepper__bell___Bacterial_spot",
-#     "Pepper__bell___healthy",
-#     "Potato___Early_blight",
-#     "Potato___healthy",
-#     "Potato___Late_blight",
-#     "Tomato_Target_Spot",
-#     "Tomato_Tomato_mosaic_virus",
-#     "Tomato_Tomato_YellowLeaf__Curl_Virus",
-#     "Tomato_Bacterial_spot",
-#     "Tomato_Early_blight",
-#     "Tomato_healthy",
-#     "Tomato_Late_blight",
-#     "Tomato_Leaf_Mold",
-#     "Tomato_Septoria_leaf_spot",
-#     "Tomato_Spider_mites_Two_spotted_spider_mite"
-# ]
-
-# MODEL_PATHS = {
-#     "MobileNetV2": "C:/Users/ayush/Documents/Coding/Agriscan/plant_disease_mobilenetv2.h5",
-#     "CNN": "C:/Users/ayush/Documents/Coding/Agriscan/plant_disease_cnn_model.h5",
-#     # "ResNet18": "models/plant_disease_resnet18.h5",
-#     # "EfficientNet": "models/plant_disease_efficientnet.h5"
-# }
-
-# # Load models once and cache
-# @st.cache_resource
-# def load_model(model_name):
-#     return tf.keras.models.load_model(MODEL_PATHS[model_name])
-
-# # UI
-# st.title("Plant Disease Classifier")
-# st.write("Upload a leaf image and choose a model to detect plant disease.")
-
-# # Model selection
-# model_choice = st.selectbox("Select a model", list(MODEL_PATHS.keys()))
-# model = load_model(model_choice)
-
-# # File upload
-# uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
-
-# if uploaded_file:
-#     image = Image.open(uploaded_file)
-#     st.image(image, caption="Uploaded Image", use_column_width=True)
-
-#     if st.button("Predict"):
-#         image_path = "temp_image.jpg"
-#         image.save(image_path)
-
-#         prediction = predict_plant_disease(image_path, model, CLASS_NAMES)
-#         st.success(f"Model: **{model_choice}**\n\nPrediction: **{prediction}**")
-
-
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -141,10 +26,10 @@ CLASS_NAMES = [
 ]
 
 MODEL_PATHS = {
-    "MobileNetV2": "C:/Users/ayush/Documents/Coding/Agriscan/plant_disease_mobilenetv2.h5",
-    "CNN": "C:/Users/ayush/Documents/Coding/Agriscan/plant_disease_cnn_model.h5", 
-    "ResNet18": "C:/Users/ayush/Documents/Coding/Agriscan/plant_disease_ResNet18.h5",
-     # "EfficientNet": "models/plant_disease_efficientnet.h5"
+    "MobileNetV2": "plant_disease_mobilenetv2.h5",
+    # "CNN": "plant_disease_cnn_model.h5", 
+    "ResNet18": "plant_disease_ResNet18.h5",
+     
     
 }
 
