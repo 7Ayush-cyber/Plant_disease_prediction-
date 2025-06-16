@@ -3,6 +3,9 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 from predict import predict_plant_disease
+from model_downloader import download_all_models
+
+download_all_models()
 
 
 IMG_SIZE = (224, 224)
@@ -25,13 +28,14 @@ CLASS_NAMES = [
     "Tomato_Spider_mites_Two_spotted_spider_mite"
 ]
 
+
 MODEL_PATHS = {
     "MobileNetV2": "plant_disease_mobilenetv2.h5",
-    # "CNN": "plant_disease_cnn_model.h5", 
+    "CNN": "plant_disease_cnn_model.h5", 
     "ResNet18": "plant_disease_ResNet18.h5",
-     
-    
+    "EfficientNetB0": "efficientnetb0_finetuned.h5"
 }
+
 
 
 TREATMENT_GUIDE = {
