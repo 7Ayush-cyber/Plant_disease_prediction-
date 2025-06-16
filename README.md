@@ -21,6 +21,7 @@ AgriScan is a deep learning-powered web application that identifies plant diseas
 - **MobileNetV2** – Efficient and lightweight.
 - **ResNet18** – Deep architecture for robust predictions.
 - **Custom CNN** – Tailored for plant disease detection with flexibility.
+- **EfficientNetB0** – Scalable and high-performing model fine-tuned for accurate plant disease classification.
 
 Each model was trained on a labeled dataset of tomato, potato, and bell pepper diseases.
 
