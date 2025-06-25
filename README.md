@@ -45,6 +45,34 @@ Each model was trained on a labeled dataset of tomato, potato, and bell pepper d
 - `Tomato_Target_Spot`
 - `Tomato_healthy`
 
+
+---
+
+## Results & Performance Metrics
+
+| Model         | Validation Accuracy | Precision        | Recall           | F1-score         | Support (Val) | Notes                                                               |
+|---------------|---------------------|------------------|------------------|------------------|---------------|--------------------------------------------------                   |
+| Custom CNN    | 69.43%              | Macro: 0.5662    | Macro: 0.5563    | Macro: 0.5234    | 4,122         | From-scratch CNN baseline                                           |
+| ResNet-18     | 81.39%              | Weighted: 0.8797 | Weighted: 0.8139 | Weighted: 0.8242 | 4,127         | Pretrained + fine-tune                                              |
+| MobileNetV2   | 94.00%              | Weighted: 0.95   | Weighted: 0.94   | Weighted: 0.94   | 4,122         | Pretrained + fine-tune; rapid convergence                           |
+| EfficientNet  | 93.23%              | Weighted: 0.95   | Weighted: 0.94   | Weighted: 0.94   | 4,122         | Pretrained; two-stage fine-tuning (feature-lock → low-LR full-tune) |
+
+---
+
+## Key Findings
+
+1. **Baseline CNN underfits**: Achieved only ~69% validation accuracy, indicating limited representational power when trained from scratch.  
+2. **ResNet-18 gains from transfer learning**: Fine-tuning a pretrained ResNet-18 boosts accuracy to ~81%, with strong weighted precision and F1 performance.  
+3. **MobileNetV2 excels in speed & accuracy**: Lightweight architecture converges rapidly and achieves ~94% validation accuracy, making it ideal for resource-constrained deployments.  
+4. **EfficientNet matches top accuracy**: After a two-phase tuning schedule, EfficientNet also reaches ~93.2%, at the cost of a more complex training procedure.  
+5. **Recommended model**: Use **MobileNetV2** for the best trade-off between ease of training, inference speed, and classification performance.  
+
+
+
+_For full training scripts and hyperparameter settings, see the corresponding Jupyter notebooks in this repository._  
+
+---
+
 For each disease, the model provides:
 
 - Natural Treatment
