@@ -81,5 +81,26 @@ For each disease, the model provides:
 
 ---
 
+##  How to Use the Web App
+
+1. **Download the Repository & Model Files**  
+   - Clone this repo locally:  
+     ```bash
+     git clone https://github.com/7Ayush-cyber/Plant_disease_prediction-.git
+     cd Plant_disease_prediction-
+     ```  
+   - (Optional) Manually download any large models into the project root:  
+     - `plant_disease_cnn_model.h5`  
+     - `plant_disease_mobilenetv2.h5`  
+     - `plant_disease_ResNet18.h5`  
+     - `efficientnetb0_finetuned.h5`
+
+2. **Set Up & Run Locally**  
+   ```bash
+   # create a virtual environment
+   python3 -m venv venv && source venv/bin/activate
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   Launch the Streamlit App (streamlit run app.py)
 
 
