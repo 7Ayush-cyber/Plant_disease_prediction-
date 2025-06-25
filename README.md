@@ -1,13 +1,13 @@
 # AgriScan - Plant Disease Detector
 
-AgriScan is a deep learning-powered web application that identifies plant diseases from leaf images. It leverages multiple CNN architectures like **MobileNetV2**, **ResNet18**, and a custom **CNN** to provide accurate predictions along with **treatment suggestions** (both natural and chemical) and **plant care tips**.
+AgriScan is a deep learning-powered web application that identifies plant diseases from leaf images. It leverages multiple CNN architectures like **MobileNetV2**, **ResNet18**, **EfficientNetB0**, and a custom **CNN** to provide accurate predictions along with **treatment suggestions** (both natural and chemical) and **plant care tips**.
 
 ---
 
 ##  Features
 
 - Upload a leaf image to detect plant disease.
-- Choose from 3 trained models: MobileNetV2, ResNet18, and Custom CNN.
+- Choose from 4 trained models: MobileNetV2, ResNet18, EfficientNetB0, and Custom CNN.
 - Get actionable treatment suggestions:
   - Natural remedies
   - Chemical solutions
@@ -45,7 +45,7 @@ Each model was trained on a labeled dataset of tomato, potato, and bell pepper d
 - `Tomato_Target_Spot`
 - `Tomato_healthy`
 
-For each disease, the app provides:
+For each disease, the model provides:
 
 - Natural Treatment
 - Chemical Treatment
